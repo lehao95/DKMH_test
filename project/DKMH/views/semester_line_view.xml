@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <!--tree-->
+        <record id="semester_line_tree" model="ir.ui.view">
+            <field name="name">Semester Line Tree</field>
+            <field name="model">object.semester.line</field>
+            <field name="arch" type="xml">
+                <tree string="Semester line Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!--form-->
+        <record id="semester_line_form" model="ir.ui.view">
+            <field name="name">Semester Tree</field>
+            <field name="model">object.semester.line</field>
+            <field name="arch" type="xml">
+                <form string="Semester">
+                    <sheet>
+                        <group>
+                            <h1>
+                                <field name="name" placeholder="Semester"/>
+                            </h1>
+                        </group>
+                        <group>
+                            <field name="subject_id"/>
+                            <field name="number_credits"/>
+                            <field name="faculty_id"/>
+                            <field name="subject_categories"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--action-->
+        <act_window id="semester_line_action"
+                    name="Semester Line"
+                    res_model="object.semester.line"
+                    view_type="form"
+                    view_mode="tree,form"/>
+    </data>
+</openerp>

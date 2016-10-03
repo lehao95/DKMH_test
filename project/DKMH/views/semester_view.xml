@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <!--tree-->
+        <record id="semester_tree" model="ir.ui.view">
+            <field name="name">Semester Tree</field>
+            <field name="model">object.semester</field>
+            <field name="arch" type="xml">
+                <tree string="Semester Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!--form-->
+         <record id="semester_form" model="ir.ui.view">
+             <field name="name">Semester Tree</field>
+             <field name="model">object.semester</field>
+             <field name="arch" type="xml">
+                 <form string="Semester">
+                     <sheet>
+                         <group>
+                             <h1>
+                                 <field name="name" placeholder="Semester"/>
+                             </h1>
+                         </group>
+                         <group>
+                             <field name="line_semester_ids">
+                                 <tree editable="bottom">
+                                     <!--<field name="name"/>-->
+                                     <field name="subject_id"/>
+                                     <field name="number_credits"/>
+                                     <field name="subject_categories"/>
+                                 </tree>
+                                 <form>
+                                     <field name="name"/>
+                                     <field name="subject_id"/>
+                                     <field name="number_credits"/>
+                                     <field name="subject_categories"/>
+                                 </form>
+                             </field>
+                         </group>
+                     </sheet>
+                 </form>
+             </field>
+         </record>
+        <!--action-->
+        <act_window id="semester_action"
+            name="Semester"
+            res_model="object.semester"
+            view_type="form"
+            view_mode="tree,form"/>
+    </data>
+</openerp>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="class_tree" model="ir.ui.view">
+            <field name="name">Class Tree</field>
+            <field name="model">object.class</field>
+            <field name="arch" type="xml">
+                <tree string="Class Tree">
+                    <field name="name"/>
+                    <field name="subject_id"/>
+                    <field name="number_credit"/>
+                </tree>
+            </field>
+        </record>
+        <!--form-->
+        <record id="class_form" model="ir.ui.view">
+            <field name="name">Class Form</field>
+            <field name="model">object.class</field>
+            <field name="arch" type="xml">
+                <form string="Class">
+                    <sheet>
+                        <group>
+                            <h1>
+                                <field name="name" placeholder="Class Name"/>
+                            </h1>
+                            <group>
+                                <field name="subject_id"/>
+                                <field name="number_credit"/>
+                                <field name="lecturer" domain="[('lecturer', '=', True)]"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="infor"/>
+                            <field name="classroom"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <act_window id="class_action"
+                    name="Class"
+                    res_model="object.class"
+                    view_type="form"
+                    view_mode="tree,form"/>
+    </data>
+</openerp>

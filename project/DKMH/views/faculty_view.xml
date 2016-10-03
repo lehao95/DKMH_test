@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <!--tree-->
+        <record id="faculty_tree" model="ir.ui.view">
+            <field name="name">Faculty Tree</field>
+            <field name="model">object.faculty</field>
+            <field name="arch" type="xml">
+                <tree string="Faculty Tree">
+                    <field name="name"/>
+                    <field name="faculty_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--form-->
+         <record id="faculty_form" model="ir.ui.view">
+            <field name="name">Faculty Form</field>
+            <field name="model">object.faculty</field>
+            <field name="arch" type="xml">
+               <form string="Faculty">
+                   <sheet>
+                       <group>
+                           <h1>
+                               <field name="name" placeholder="Faculty Name"/>
+                           </h1>
+                           <group>
+                                <field name="faculty_id"/>
+                           </group>
+                       </group>
+                   </sheet>
+               </form>
+            </field>
+        </record>
+        <!--action-->
+        <act_window id="faculty_action"
+            name="Faculty"
+            res_model="object.faculty"
+            view_type="form"
+            view_mode="tree,form"/>
+    </data>
+</openerp>

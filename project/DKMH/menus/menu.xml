@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+            <menuitem id="regsitration_id"
+                      name="Regsitration"/>
+
+                <menuitem id="student_lecturer_manage"
+                          name="Student and Lecturer"
+                          parent="regsitration_id"/>
+
+                    <menuitem id="student_lecturer_id"
+                              name="Student and Lecturer"
+                              action="student_lecturer_action"
+                              parent="student_lecturer_manage"/>
+
+                <menuitem id="faculty_manage"
+                          name="Faculty"
+                          parent="regsitration_id"/>
+
+                    <menuitem id="faculty_id"
+                              name="Faculty"
+                              action="faculty_action"
+                              parent="faculty_manage"/>
+
+                    <menuitem id="course_id"
+                              name="Course"
+                              action="course_action"
+                              parent="faculty_manage"/>
+
+                    <menuitem id="semester_id"
+                              name="Semester"
+                              action="semester_action"
+                              parent="faculty_manage"/>
+
+                    <menuitem id="subject_id"
+                              name="Subject"
+                              action="subject_action"
+                              parent="faculty_manage"/>
+                    <menuitem id="ep_id"
+                              name="Education Program"
+                              action="education_program_action"
+                              parent="faculty_manage"/>
+
+                         <menuitem id="subject_line id"
+                                  name="Semester line"
+                                  action="semester_line_action"
+                                  parent="ep_id"/>
+                <menuitem id="class_id"
+                          name="Class"
+                          parent="regsitration_id"/>
+                    <menuitem id="class_re_id"
+                              name="Class"
+                              action="class_action"
+                              parent="class_id"/>
+
+    </data>
+</openerp>

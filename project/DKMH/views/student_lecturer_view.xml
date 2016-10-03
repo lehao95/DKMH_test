@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <!--tree-->
+         <record id="student_lecturer_tree" model="ir.ui.view">
+            <field name="name">Student and Lecturer Tree</field>
+            <field name="model">object.student.lecturer</field>
+            <field name="arch" type="xml">
+                <tree string="Student and Lecturer">
+                    <field name="name"/>
+                    <field name="birthdate"/>
+                    <field name="student"/>
+                    <field name="lecturer"/>
+                </tree>
+            </field>
+        </record>
+        <!--form-->
+        <record id="student_lecturer_form" model="ir.ui.view">
+            <field name="name">Student and Lecturer Form</field>
+            <field name="model">object.student.lecturer</field>
+            <field name="arch" type="xml">
+               <form string="Student and Lecturer">
+                   <sheet>
+                       <group>
+                           <h1>
+                               <field name="name" placeholder="Name"/>
+                           </h1>
+                           <group>
+                                <field name="birth_date"/>
+                           </group>
+                       </group>
+                       <group>
+                           <field name="student" attrs="{'invisible':[('lecturer','=',True)]}"/>
+                           <field name="lecturer" attrs="{'invisible':[('student','=',True)]}"/>
+                           <field name="student_id" attrs="{'invisible':[('student','=',False)]}"/>
+                           <field name="faculty_id" attrs="{'invisible':[('student','=',False)]}"/>
+                           <field name="course_id" attrs="{'invisible':[('student','=',False)]}"/>
+                       </group>
+                   </sheet>
+               </form>
+            </field>
+        </record>
+        <!--action-->
+        <act_window id="student_lecturer_action"
+            name="Student and Lecturer"
+            res_model="object.student.lecturer"
+            view_type="form"
+            view_mode="tree,form"/>
+    </data>
+</openerp>
